@@ -7,6 +7,11 @@ const port = 3000;
 
 app.use(express.static(path.join(__dirname, "public")));
 
+// Middleware xử lý dữ liệu submit từ form lên server
+app.use(express.urlencoded({ extended: true }));
+// XMLHttpRequest, fetch, axios, ...
+app.use(express.json());
+
 // HTTP logger
 app.use(morgan("combined"));
 
@@ -28,6 +33,18 @@ app.get("/", (req, res) => {
 
 app.get("/news", (req, res) => {
   res.render("news");
+});
+
+app.get("/search", (req, res) => {
+  console.log("QUERY:", req.query);
+
+  res.render("search");
+});
+
+app.post("/search", (req, res) => {
+  console.log("BODY:", req.body);
+
+  res.send("");
 });
 
 app.listen(port, () => {
