@@ -7,6 +7,10 @@ const port = 3000;
 
 // Khi để đường dẫn đến thư mục, tự nạp file index
 const route = require("./routes");
+const db = require("./config/db");
+
+// Connection to DB
+db.connect();
 
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -28,7 +32,7 @@ app.engine(
 
 app.set("view engine", "hbs");
 
-app.set("views", path.join(__dirname, "resources/views"));
+app.set("views", path.join(__dirname, "resources", "views")); // Viết thành các dạng đối số cho phù hợp nhiều OS (operating system)
 
 // Routes init - Khởi tạo tuyến đường
 route(app);

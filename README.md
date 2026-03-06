@@ -40,7 +40,6 @@
 - Tất cả các METHOD đều có thể sử dụng QUERY PARAMETERS
 
 - Get
-
   - Mục đích: Lấy dữ liệu (Read)
   - Dữ liệu truyền: Nằm trên URL
   - Tính bảo mật: Thấp
@@ -60,7 +59,9 @@
     Bạn làm thay đổi dữ liệu: Tạo mới một user (/users), đặt hàng, đăng bài viết.
     Gửi lượng dữ liệu lớn: POST cho phép bạn gửi file, ảnh, hoặc đoạn text rất dài trong "Body" mà không bị giới hạn độ dài như URL.
 
-### MongoDB
+### MongoDB: Cơ sở dữ liệu hướng tài liệu (Document-oriented database)
+
+### Mongoose: Công cụ để mô hình hóa đối tượng cho Document-oriendted database
 
 ## Run: Terminal -> mongod
 
