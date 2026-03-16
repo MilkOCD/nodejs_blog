@@ -1,0 +1,6 @@
+{{#each blogPosts}}
+  <div class="flex border p-10">
+    <h3>{{sum @index 1}}. {{this.name}}</h3>
+    <a class="btn btn-link" href="/blog-detail/{{this._id}}/edit">Chỉnh sửa</a>
+  </div>
+{{/each}}

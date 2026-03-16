@@ -30,6 +30,9 @@ app.engine(
   "hbs",
   engine({
     extname: ".hbs",
+    helpers: {
+      sum: (a, b) => a + b,
+    },
   })
 );
 

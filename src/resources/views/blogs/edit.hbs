@@ -1,0 +1,35 @@
+<div class="mt-4">
+  <form method="POST" action="/blog-detail/{{blogPost._id}}/edit?_method=PUT">
+    <div class="mb-3">
+      <label for="staticEmail2">Name</label>
+      <input
+        name="name"
+        type="text"
+        id="staticEmail2"
+        value="{{blogPost.name}}"
+      />
+    </div>
+    aa{{blogPost.name}}
+    <div class="mb-3">
+      <label for="staticEmail2">Description</label>
+      <input
+        name="description"
+        type="text"
+        id="staticEmail2"
+        value="{{blogPost.description}}"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="staticEmail2">Image</label>
+      <input
+        name="image"
+        type="text"
+        id="staticEmail2"
+        value="{{blogPost.image}}"
+      />
+    </div>
+    <div class="mb-3">
+      <button type="submit" class="btn btn-primary mb-3">Save</button>
+    </div>
+  </form>
+</div>
