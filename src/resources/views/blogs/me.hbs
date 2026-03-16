@@ -2,5 +2,30 @@
   <div class="flex border p-10">
     <h3>{{sum @index 1}}. {{this.name}}</h3>
     <a class="btn btn-link" href="/blog-detail/{{this._id}}/edit">Chỉnh sửa</a>
+    <a
+      class="blog-delete-btn btn btn-link"
+      href=""
+      data-bs-id="{{this._id}}"
+    >Xóa</a>
   </div>
 {{/each}}
+<form method="POST" id="hidden-delete-form" action=""></form>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() { const
+  hiddenDeleteForm = document.getElementById('hidden-delete-form'); const
+  deleteBtns = document.querySelectorAll('.blog-delete-btn');
+  deleteBtns.forEach((button) => { button.onclick = function(ev) {
+  ev.preventDefault(); const id = button.getAttribute('data-bs-id');
+  hiddenDeleteForm.action = `/blog-detail/${id}?_method=DELETE`;
+  hiddenDeleteForm.submit() }; }) })
+</script>
+
+{{!
+Đảm bảo JQuery đã được nạp (30)
+  <script>
+    docmunet.addEventListener('DOMContentLoaded', funtionc() {
+      // Any logic here
+    });
+  </script>
+}}

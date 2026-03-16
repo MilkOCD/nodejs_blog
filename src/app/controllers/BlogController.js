@@ -48,6 +48,11 @@ class BlogController {
     // res.json(blogPost);
     res.redirect("/blog-detail/me");
   });
+
+  destroy = asyncHandler(async (req, res) => {
+    await BlogPost.deleteOne({ _id: req.params.id });
+    res.redirect("/blog-detail/me");
+  });
 }
 
 module.exports = new BlogController();
