@@ -6,8 +6,8 @@ class SiteController {
   index = asyncHandler(async (req, res) => {
     const blogPosts = await BlogPost.find({}).lean();
 
-    res.json(blogPosts);
-    // res.render("home");
+    // res.json(blogPosts);
+    res.render("home", { blogPosts });
   });
 
   // [GET] /search

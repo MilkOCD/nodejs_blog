@@ -1,1 +1,19 @@
-<h1>HOME PAGE</h1>
+<div class="container text-center">
+  <div class="row">
+    {{#each blogPosts}}
+      <div class="col">
+        <div class="card" style="width: 18rem;">
+          <img src={{this.image}} class="card-img-top" alt="..." />
+          <div class="card-body">
+            <h5 class="card-title">{{this.name}}</h5>
+            <p class="card-text">{{this.description}}</p>
+            <a
+              href="/blog-detail/{{this.slug}}"
+              class="btn btn-primary"
+            >Learn</a>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+  </div>
+</div>

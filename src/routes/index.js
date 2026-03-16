@@ -5,9 +5,11 @@
 
 const siteRouter = require("./site.route");
 const newsRouter = require("./news.route");
+const blogRouter = require("./blog.route");
 
 function route(app) {
   app.use("/news", newsRouter);
+  app.use("/blog-detail", blogRouter);
   app.use("/", siteRouter);
 }
 

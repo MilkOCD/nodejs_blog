@@ -1,5 +1,6 @@
 const path = require("path");
 const express = require("express");
+const methodOverride = require("method-override");
 const morgan = require("morgan");
 const { engine } = require("express-handlebars");
 const app = express();
@@ -18,6 +19,8 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(express.urlencoded({ extended: true }));
 // XMLHttpRequest, fetch, axios, ...
 app.use(express.json());
+
+app.use(methodOverride("_method"));
 
 // HTTP logger
 app.use(morgan("combined"));
