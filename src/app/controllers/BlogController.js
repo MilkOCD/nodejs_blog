@@ -29,8 +29,12 @@ class BlogController {
   // [GET] /blog-detail/me
   me = asyncHandler(async (req, res) => {
     const blogPosts = await BlogPost.find({}).lean();
+    const deletedBlogPosts = await BlogPost.findDeleted({}).lean();
 
-    res.render("blogs/me", { blogPosts: blogPosts });
+    res.render("blogs/me", {
+      blogPosts: blogPosts,
+      deletedBlogPosts: deletedBlogPosts,
+    });
   });
 
   // [GET] /blog-detail/{id}/edit
@@ -50,7 +54,7 @@ class BlogController {
   });
 
   destroy = asyncHandler(async (req, res) => {
-    await BlogPost.deleteOne({ _id: req.params.id });
+    await BlogPost.delete({ _id: req.params.id });
     res.redirect("/blog-detail/me");
   });
 }

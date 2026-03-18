@@ -88,3 +88,9 @@
   "": ""
   }
   },
+
+### Soft delete
+
+- Delete (soft)
+- Restore
+- Force delete

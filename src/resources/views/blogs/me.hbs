@@ -1,3 +1,4 @@
+<h2>Khả dụng</h2>
 {{#each blogPosts}}
   <div class="flex border p-10">
     <h3>{{sum @index 1}}. {{this.name}}</h3>
@@ -7,6 +8,12 @@
       href=""
       data-bs-id="{{this._id}}"
     >Xóa</a>
+  </div>
+{{/each}}
+<h2>Đã xóa</h2>
+{{#each deletedBlogPosts}}
+  <div class="flex border p-10">
+    <h3>{{sum @index 1}}. {{this.name}}</h3>
   </div>
 {{/each}}
 <form method="POST" id="hidden-delete-form" action=""></form>

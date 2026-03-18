@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const crypto = require("crypto");
+const mongooseDelete = require("mongoose-delete");
 
 var slugify = require("slugify");
 
@@ -32,5 +33,7 @@ BlogPost.pre("save", async function () {
     this.slug = `${baseSlug}-${randomSuffix}`;
   }
 });
+
+BlogPost.plugin(mongooseDelete, { overrideMethods: "all", deletedAt: true });
 
 module.exports = mongoose.model("BlogPost", BlogPost);
