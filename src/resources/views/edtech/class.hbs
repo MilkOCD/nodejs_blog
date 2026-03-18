@@ -1,0 +1,95 @@
+<div class="mt-5">
+  <h3 class="text-center mb-4">Weekly Class Schedule</h3>
+  <div class="table-responsive">
+    <table class="table table-bordered text-center">
+      <thead class="table-dark">
+        <tr>
+          <th>Time Slot</th>
+          <th>Mon (2)</th>
+          <th>Tue (3)</th>
+          <th>Wed (4)</th>
+          <th>Thu (5)</th>
+          <th>Fri (6)</th>
+          <th>Sat (7)</th>
+          <th>Sun (8)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="align-middle fw-bold">08:00 - 10:00</td>
+          <td
+            onclick="selectClass('65f8a1b2c3d4e5f6a1b2c3d1', 'Math 101')"
+            style="cursor:pointer"
+          >
+            <div class="badge bg-primary d-block mb-1">Math 101</div>
+            <small>Teacher: Mr. Chien</small>
+          </td>
+          <td>—</td>
+          <td
+            onclick="selectClass('65f8a1b2c3d4e5f6a1b2c3d2', 'English A1')"
+            style="cursor:pointer"
+          >
+            <div class="badge bg-success d-block mb-1">English A1</div>
+            <small>Teacher: Ms. Anna</small>
+          </td>
+          <td>—</td><td>—</td><td>—</td><td>—</td>
+        </tr>
+        <tr>
+          <td class="align-middle fw-bold">14:00 - 16:00</td>
+          <td>—</td>
+          <td
+            onclick="selectClass('65f8a1b2c3d4e5f6a1b2c3d3', 'Coding Basics')"
+            style="cursor:pointer"
+          >
+            <div class="badge bg-warning text-dark d-block mb-1">Coding Basics</div>
+            <small>Teacher: Dr. Canh</small>
+          </td>
+          <td>—</td><td>—</td><td>—</td><td>—</td><td>—</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="card mt-4 border-primary">
+  <div class="card-header bg-primary text-white">
+    <h4 class="mb-0">Quick Registration</h4>
+  </div>
+  <div class="card-body">
+    <form id="registrationForm" method="POST" action="">
+      <div class="row align-items-end">
+        <div class="col-md-4 mb-3">
+          <label class="form-label">Selected Class</label>
+          <input
+            type="text"
+            id="classNameDisplay"
+            class="form-control"
+            placeholder="Click a class above"
+            readonly
+          />
+        </div>
+        <div class="col-md-5 mb-3">
+          <label class="form-label">Student ID</label>
+          <input
+            name="student_id"
+            type="text"
+            class="form-control"
+            placeholder="Paste Student ID here"
+            required
+          />
+        </div>
+        <div class="col-md-3 mb-3">
+          <button type="submit" class="btn btn-primary w-100">Enroll Student</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  function selectClass(classId, className) { var form =
+  document.getElementById('registrationForm'); var display =
+  document.getElementById('classNameDisplay'); if (form && display) {
+  form.action = '/api/classes/' + classId + '/register'; display.value =
+  className; } }
+</script>

@@ -1,0 +1,43 @@
+<div class="mt-4">
+  <form method="POST" action="/api/parents">
+    <div class="mb-3">
+      <label for="parentName" class="form-label">Full Name</label>
+      <input
+        name="name"
+        type="text"
+        class="form-control"
+        id="parentName"
+        placeholder="Enter parent name"
+        required
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="parentPhone" class="form-label">Phone Number</label>
+      <input
+        name="phone"
+        type="text"
+        class="form-control"
+        id="parentPhone"
+        placeholder="090..."
+        required
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="parentEmail" class="form-label">Email Address</label>
+      <input
+        name="email"
+        type="email"
+        class="form-control"
+        id="parentEmail"
+        placeholder="example@gmail.com"
+        required
+      />
+    </div>
+
+    <div class="mb-3">
+      <button type="submit" class="btn btn-primary">Create Parent</button>
+    </div>
+  </form>
+</div>
